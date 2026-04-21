@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Βάπτιση της Ιόλης</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f4eb 0%, #ebe3d6 100%);
+            perspective: 1000px;
+            padding: 20px;
+        }
+        .card-container {
+            width: 400px;
+            height: 560px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .card-container.flipped {
+            transform: rotateY(180deg);
+        }
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 4px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+        .card-front {
+            background: url('a.jpeg') center/cover no-repeat;
+        }
+        .card-back {
+            background: url('b.jpeg') center/cover no-repeat;
+            transform: rotateY(180deg);
+        }
+        .links {
+            display: none;
+            gap: 20px;
+        }
+        .links.show {
+            display: flex;
+        }
+        .links a {
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .links a:hover {
+            transform: scale(1.2);
+        }
+        .hint {
+            position: fixed;
+            bottom: 20px;
+            color: #888;
+            font-family: Georgia, serif;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container" id="card" onclick="toggleCard()">
+        <div class="card-face card-front"></div>
+        <div class="card-face card-back"></div>
+    </div>
+    <div class="links" id="links">
+        <a href="https://maps.app.goo.gl/HfasjwmM1uZPextm7" target="_blank">⛪</a>
+        <a href="https://maps.app.goo.gl/RUKfEu5VRGkA9Btj9" target="_blank">🍷</a>
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%CE%92%CE%AC%CF%80%CF%84%CE%B9%CF%83%CE%B7%20%CE%99%CF%8C%CE%BB%CE%B7%CF%82&dates=20260607T090000Z/20260607T140000Z&location=%CE%86%CE%B3%CE%B9%CE%BF%CF%82%20%CE%9D%CE%B9%CE%BA%CF%8C%CE%BB%CE%B1%CE%BF%CF%82%20%CE%9F%CF%81%CF%86%CE%B1%CE%BD%CF%8C%CF%82" target="_blank">📅</a>
+    </div>
 
+    <script>
+        const card = document.getElementById('card');
+        const links = document.getElementById('links');
+
+        function toggleCard() {
+            card.classList.toggle('flipped');
+            links.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
