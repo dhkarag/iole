@@ -50,18 +50,34 @@
         }
         .links {
             display: none;
-            gap: 20px;
+            gap: 15px;
         }
         .links.show {
             display: flex;
         }
+        .link-col {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
         .links a {
-            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1em;
             text-decoration: none;
-            transition: transform 0.2s;
+            font-family: Georgia, serif;
+            color: #666;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: all 0.3s;
         }
         .links a:hover {
-            transform: scale(1.2);
+            background: #666;
+            color: #fff;
+        }
+        .links a span:first-child {
+            font-size: 1.2em;
         }
         .hint {
             position: fixed;
@@ -78,10 +94,14 @@
         <div class="card-face card-back"></div>
     </div>
     <div class="links" id="links">
-        <a href="https://maps.app.goo.gl/HfasjwmM1uZPextm7" target="_blank">⛪</a>
-        <a href="https://maps.app.goo.gl/RUKfEu5VRGkA9Btj9" target="_blank">🍷</a>
-        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%CE%92%CE%AC%CF%80%CF%84%CE%B9%CF%83%CE%B7%20%CE%99%CF%8C%CE%BB%CE%B7%CF%82&dates=20260607T090000Z/20260607T140000Z&location=%CE%86%CE%B3%CE%B9%CE%BF%CF%82%20%CE%9D%CE%B9%CE%BA%CF%8C%CE%BB%CE%B1%CE%BF%CF%82%20%CE%9F%CF%81%CF%86%CE%B1%CE%BD%CF%8C%CF%82" target="_blank">🗓️</a>
-        <a href="https://forms.gle/pyCK6AaGveduS57eA" target="_blank">📬</a>
+        <div class="link-col">
+            <a href="https://forms.gle/pyCK6AaGveduS57eA" target="_blank"><span>📬</span><span>RSVP</span></a>
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%CE%92%CE%AC%CF%80%CF%84%CE%B9%CF%83%CE%B7%20%CE%99%CF%8C%CE%BB%CE%B7%CF%82&dates=20260607T090000Z/20260607T140000Z&location=%CE%86%CE%B3%CE%B9%CE%BF%CF%82%20%CE%9D%CE%B9%CE%BA%CF%8C%CE%BB%CE%B1%CE%BF%CF%82%20%CE%9F%CF%81%CF%86%CE%B1%CE%BD%CF%8C%CF%82" target="_blank"><span>🗓️</span><span>Προσθήκη στο ημερολόγιο</span></a>
+        </div>
+        <div class="link-col">
+            <a href="https://maps.app.goo.gl/HfasjwmM1uZPextm7" target="_blank"><span>⛪</span><span>Ναός</span></a>
+            <a href="https://maps.app.goo.gl/RUKfEu5VRGkA9Btj9" target="_blank"><span>🍷</span><span>Γεύμα</span></a>
+        </div>
     </div>
 
     <script>
