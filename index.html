@@ -50,10 +50,15 @@
         }
         .links {
             display: none;
+            flex-direction: column;
             gap: 15px;
         }
         .links.show {
             display: flex;
+        }
+        .link-row {
+            display: flex;
+            gap: 15px;
         }
         .link-col {
             display: flex;
@@ -71,6 +76,7 @@
             padding: 6px 12px;
             border-radius: 4px;
             transition: all 0.3s;
+            background: transparent;
         }
         .links a:hover {
             background: #666;
@@ -78,6 +84,13 @@
         }
         .links a span:first-child {
             font-size: 1.2em;
+        }
+        .link-full {
+            justify-content: center;
+        }
+        .link-full:hover {
+            background: #666;
+            color: #fff;
         }
         .hint {
             position: fixed;
@@ -94,14 +107,17 @@
         <div class="card-face card-back"></div>
     </div>
     <div class="links" id="links">
-        <div class="link-col">
-            <a href="https://forms.gle/pyCK6AaGveduS57eA" target="_blank"><span>📬</span><span>RSVP</span></a>
-            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%CE%92%CE%AC%CF%80%CF%84%CE%B9%CF%83%CE%B7%20%CE%99%CF%8C%CE%BB%CE%B7%CF%82&dates=20260607T090000Z/20260607T140000Z&location=%CE%86%CE%B3%CE%B9%CE%BF%CF%82%20%CE%9D%CE%B9%CE%BA%CF%8C%CE%BB%CE%B1%CE%BF%CF%82%20%CE%9F%CF%81%CF%86%CE%B1%CE%BD%CF%8C%CF%82" target="_blank"><span>🗓️</span><span>Προσθήκη στο ημερολόγιο</span></a>
+        <div class="link-row">
+            <div class="link-col">
+                <a href="https://forms.gle/pyCK6AaGveduS57eA" target="_blank"><span>📬</span><span>RSVP</span></a>
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%CE%92%CE%AC%CF%80%CF%84%CE%B9%CF%83%CE%B7%20%CE%99%CF%8C%CE%BB%CE%B7%CF%82&dates=20260607T090000Z/20260607T140000Z&location=%CE%86%CE%B3%CE%B9%CE%BF%CF%82%20%CE%9D%CE%B9%CE%BA%CF%8C%CE%BB%CE%B1%CE%BF%CF%82%20%CE%9F%CF%81%CF%86%CE%B1%CE%BD%CF%8C%CF%82" target="_blank"><span>🗓️</span><span>Προσθήκη στο ημερολόγιο</span></a>
+            </div>
+            <div class="link-col">
+                <a href="https://maps.app.goo.gl/HfasjwmM1uZPextm7" target="_blank"><span>⛪</span><span>Ναός</span></a>
+                <a href="https://maps.app.goo.gl/RUKfEu5VRGkA9Btj9" target="_blank"><span>🍷</span><span>Γεύμα</span></a>
+            </div>
         </div>
-        <div class="link-col">
-            <a href="https://maps.app.goo.gl/HfasjwmM1uZPextm7" target="_blank"><span>⛪</span><span>Ναός</span></a>
-            <a href="https://maps.app.goo.gl/RUKfEu5VRGkA9Btj9" target="_blank"><span>🍷</span><span>Γεύμα</span></a>
-        </div>
+        <a href="https://photos.app.goo.gl/Vcj1mrKLN3PuGpSq6" target="_blank" class="link-full"><span>📸</span><span>Στείλε μας τις φωτογραφίες σου!</span></a>
     </div>
 
     <script>
